@@ -20,9 +20,7 @@ function Home({menu}: HomeProps): JSX.Element {
             <Tag size={'m'} color={'primary'} href={'#'}>VFKF</Tag>
             <Tag size={'m'} color={'green'} href={'#'}>VFKF</Tag>
             <Rating rating={rating} setRating={setRating}/>
-              <ul>
-                  {menu.map(m => (<li key={m._id.secondCategory}>{m._id.secondCategory}</li>))}
-              </ul>
+
         </>
     );
 }

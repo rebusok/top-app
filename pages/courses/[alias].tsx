@@ -23,8 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const {data: menu} = await axios.post<MenuItem[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
         firstCategory
     });
-    const test = menu.flatMap(m => m.pages.map(p => '/courses/' + p.alias));
-    console.log(test)
+
     return {
         paths: menu.flatMap(m => m.pages.map(p => '/courses/' + p.alias)),
         fallback: true

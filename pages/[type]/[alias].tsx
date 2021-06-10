@@ -6,19 +6,14 @@ import {MenuItem} from "../../interfaces/menu.interface";
 import {TopLevelCategory, TopPageModel} from "../../interfaces/page.intirface";
 import {ProductModel} from "../../interfaces/product.interface";
 import {firstLevelCategory} from "../../helpers/helpers";
+import {TopPageComponent} from "../../pageComponents";
 
 
-function Course({menu, page, products}: CourseProps): JSX.Element {
-
-    return (
-        < >
-            {products && products.length}
-
-        </>
-    );
+function TopPage({firstCategory, page, products}: TopPage): JSX.Element {
+    return <TopPageComponent page={page} products={products} firstCategory={firstCategory}/>;
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
     let paths:string[] = [];
@@ -36,7 +31,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 
-export const getStaticProps: GetStaticProps<CourseProps> = async ({params}:GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps<TopPage> = async ({params}:GetStaticPropsContext) => {
     if(!params) {
         return {
             notFound:true
@@ -77,7 +72,7 @@ export const getStaticProps: GetStaticProps<CourseProps> = async ({params}:GetSt
     }
 };
 
-interface CourseProps extends Record<string, unknown>{
+interface TopPage extends Record<string, unknown>{
     menu: MenuItem[];
     firstCategory: TopLevelCategory;
     page: TopPageModel;

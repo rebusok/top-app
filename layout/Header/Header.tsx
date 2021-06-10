@@ -4,7 +4,6 @@ import styles from './Header.module.css';
 const Header = ({...restProps}: HeaderProps): JSX.Element => {
     return (
         <div {...restProps} className={styles.header}>
-            Header
         </div>
     );
 };

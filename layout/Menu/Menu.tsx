@@ -26,7 +26,7 @@ const Menu = (): JSX.Element => {
             <>
                 {firstLevelCategory.map(m => (
                     <div key={m.route}>
-                        <Link href={`/${m.route}`}>
+                        <Link href={`/${m.route}`} >
                             <a>
                                 <div className={cn(styles.firstLevel, {
                                     [styles.firstLevelActive]: m.id === firstCategory

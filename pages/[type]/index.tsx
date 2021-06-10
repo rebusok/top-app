@@ -10,9 +10,7 @@ function Type({firstCategory}:TypeProps): JSX.Element {
 
     return (
         < >
-            dsadasda
             {firstCategory}
-
         </>
     );
 }

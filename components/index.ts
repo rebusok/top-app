@@ -5,6 +5,7 @@ import Tag from "./Tag/Tag";
 import Rating from "./Rating/Rating";
 import Card from "./Card/Card";
 import HhData from "./HhData/HhData";
+import Advantages from "./Advantages/Advantages";
 export {
     Htag,
     Button,
@@ -12,5 +13,6 @@ export {
     Tag,
     Rating,
     Card,
-    HhData
+    HhData,
+    Advantages
 };

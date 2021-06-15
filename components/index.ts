@@ -6,6 +6,7 @@ import Rating from "./Rating/Rating";
 import Card from "./Card/Card";
 import HhData from "./HhData/HhData";
 import Advantages from "./Advantages/Advantages";
+import Sort from "./Sort/Sort";
 export {
     Htag,
     Button,
@@ -14,5 +15,6 @@ export {
     Rating,
     Card,
     HhData,
-    Advantages
+    Advantages,
+    Sort
 };

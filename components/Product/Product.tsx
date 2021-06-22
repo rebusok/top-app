@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {ProductProps} from "./Product.props";
 import styles from './Product.module.css';
 import {Button, Card, Divider, Rating, Tag} from "../index";
-import {priceRu} from "../../helpers/helpers";
+import {devOfNum, priceRu} from "../../helpers/helpers";
 
 const Product: FC<ProductProps> = ({product}) => {
 
@@ -25,10 +25,19 @@ const Product: FC<ProductProps> = ({product}) => {
                                                                            color={'ghost'}>{c}</Tag>)}</div>
             <div className={styles.priceTitle}>цена</div>
             <div className={styles.creditTitle}>кредит</div>
-            <div className={styles.rateTitle}>{product.reviewCount} отзывов</div>
+            <div className={styles.rateTitle}>{product.reviewCount} {devOfNum(product.reviewCount, ['отзыв', "отзыва", "отзывов"])}</div>
             <Divider className={styles.hr}/>
             <div className={styles.description}>{product.description}</div>
-            <div className={styles.feature}>fittch</div>
+            <div className={styles.feature}>
+                {product.characteristics.map(c => (
+                    <div className={styles.characteristics} key={c.name}>
+                        <span className={styles.characteristicsName}>{c.name}</span>
+                        <span className={styles.characteristicsDots}/>
+                        <span className={styles.characteristicsValue}>{c.value}</span>
+                    </div>
+                ))}
+
+            </div>
             <div className={styles.advBlock}>
                 {product.advantages && <div className={styles.advantages}>
                     <div className={styles.advTitle}>Преимущества</div>

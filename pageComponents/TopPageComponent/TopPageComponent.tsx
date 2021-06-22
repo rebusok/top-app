@@ -1,6 +1,6 @@
 import React, {useEffect, useReducer} from 'react';
 import {TopPageComponentProps} from "./TopPageComponent.props";
-import {Advantages, HhData, Htag, Sort, Tag} from "../../components";
+import {Advantages, HhData, Htag, Product, Sort, Tag} from "../../components";
 import styles from './TopPageComponent.module.css';
 import {TopLevelCategory} from "../../interfaces/page.intirface";
 import {SortEnum} from "../../components/Sort/Sort.props";
@@ -28,7 +28,7 @@ const TopPageComponent = ({page, products, firstCategory}:TopPageComponentProps)
                 <Sort sort={sort} setSort={setSort}/>
             </div>
             <div>
-                {products && sortedProducts.map(p => (<div key={p._id}>{p.title}</div>))}
+                {products && sortedProducts.map(p => (<Product product={p} key={p._id}/>))}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag={'h2'}>Вакансии - {page.category}</Htag>

@@ -1,11 +1,12 @@
-import {Button, Htag, Ptag, Rating, Tag} from "../components";
+import {Button, Htag, Input, Ptag, Rating, Tag} from "../components";
 import {useState} from "react";
 import {withLayout} from "../layout/Layout";
 import {GetStaticProps} from "next";
 import axios from "axios";
 import {MenuItem} from "../interfaces/menu.interface";
+import TextArea from "../components/TextArea/TextArea";
 
-function Home({menu}: HomeProps): JSX.Element {
+function Home(props: HomeProps): JSX.Element {
     const [rating, setRating] = useState<number>(4);
     return (
         < >
@@ -20,7 +21,8 @@ function Home({menu}: HomeProps): JSX.Element {
             <Tag size={'m'} color={'primary'} href={'#'}>VFKF</Tag>
             <Tag size={'m'} color={'green'} href={'#'}>VFKF</Tag>
             <Rating rating={rating} setRating={setRating}/>
-
+            <Input/>
+            <TextArea/>
         </>
     );
 }

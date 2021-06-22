@@ -7,6 +7,10 @@ import Card from "./Card/Card";
 import HhData from "./HhData/HhData";
 import Advantages from "./Advantages/Advantages";
 import Sort from "./Sort/Sort";
+import Input from "./Input/Input";
+import TextArea from "./TextArea/TextArea";
+import Product from "./Product/Product";
+import Divider from "./Divider/Divider";
 export {
     Htag,
     Button,
@@ -16,5 +20,9 @@ export {
     Card,
     HhData,
     Advantages,
-    Sort
+    Sort,
+    Input,
+    TextArea,
+    Product,
+    Divider
 };

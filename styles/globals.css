@@ -20,7 +20,7 @@ a {
 
 :root {
 	--black: #3B434E;
-	--gray-light: #D2D2D2;
+	--gray-light: #EBEBEB;
 	--gray-dark: #787D85;
 	--white: #FFF;
 	--primary: #7653FC;
@@ -30,4 +30,5 @@ a {
 	--green-ligth: #C8F8E4;
 	--font-family: 'Noto Sans KR', sans-serif;
 	--rootBack: #E5E5E5;
+	--gray: #A4A4A4;
 }

@@ -3,12 +3,20 @@ import {ProductProps} from "./Product.props";
 import styles from './Product.module.css';
 import {Button, Card, Divider, Rating, Tag} from "../index";
 import {devOfNum, priceRu} from "../../helpers/helpers";
+import Image from "next/image";
+import cn from 'classnames';
 
 const Product: FC<ProductProps> = ({product}) => {
 
     return (
         <Card className={styles.product}>
-            <div className={styles.logo}><img src={process.env.NEXT_PUBLIC_DOMAIN + product.image} alt={product.title}/>
+            <div className={styles.logo}>
+                <Image
+                    src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
+                    alt={product.title}
+                    width={70}
+                    height={70}
+                />
             </div>
             <div className={styles.title}>{product.title}</div>
             <div className={styles.price}>
@@ -48,7 +56,7 @@ const Product: FC<ProductProps> = ({product}) => {
                     <div>{product.disadvantages}</div>
                 </div>}
             </div>
-            <Divider className={styles.hr}/>
+            <Divider className={cn(styles.hr, styles.hr2)}/>
             <div className={styles.actions}>
                 <Button appearance={'primary'}>Узнать подробнее</Button>
                 <Button appearance={'ghost'} arrow={'right'} className={styles.reviewBtn}>Читать отзывы</Button>

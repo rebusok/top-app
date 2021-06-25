@@ -1,9 +1,7 @@
 .product {
 	display: grid;
 
-	margin-top: 20px;
-
-	margin-bottom: 30px;
+	margin-top: 30px;
 	padding: 30px;
 	grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [rateend] auto [end];
 }
@@ -149,6 +147,18 @@
 	margin-bottom: 5px;
 
 	border-bottom: 1px dashed var(--gray-light);
+}
+
+.close {
+	overflow: hidden;
+
+	max-height: 0;
+	padding: 0;
+}
+
+.open {
+	max-height: max-content;
+	padding: 30px;
 }
 
 @media screen and (max-width: 1320px) {

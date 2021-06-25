@@ -11,6 +11,7 @@ import Input from "./Input/Input";
 import TextArea from "./TextArea/TextArea";
 import Product from "./Product/Product";
 import Divider from "./Divider/Divider";
+import Review from "./Review/Review";
 export {
     Htag,
     Button,
@@ -24,5 +25,6 @@ export {
     Input,
     TextArea,
     Product,
-    Divider
+    Divider,
+    Review
 };

@@ -7,11 +7,12 @@ import Card from "./Card/Card";
 import HhData from "./HhData/HhData";
 import Advantages from "./Advantages/Advantages";
 import Sort from "./Sort/Sort";
-import Input from "./Input/Input";
+import {Input} from "./Input/Input";
 import TextArea from "./TextArea/TextArea";
 import Product from "./Product/Product";
 import Divider from "./Divider/Divider";
 import Review from "./Review/Review";
+import ReviewForm from './ReviewForm/ReviewForm';
 export {
     Htag,
     Button,
@@ -26,5 +27,6 @@ export {
     TextArea,
     Product,
     Divider,
-    Review
+    Review,
+    ReviewForm
 };

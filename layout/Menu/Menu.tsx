@@ -15,11 +15,11 @@ const Menu = (): JSX.Element => {
     const openSecondLevel = (secondCategory:string) => {
         setMenu && setMenu(menu.map(m => {
             if(m._id.secondCategory === secondCategory) {
-                m.isOpened = !m.isOpened
+                m.isOpened = !m.isOpened;
             }
-            return m
-        }))
-    }
+            return m;
+        }));
+    };
 
     const buildFirstLevel = () => {
         return (
@@ -47,7 +47,7 @@ const Menu = (): JSX.Element => {
             <div className={styles.secondBlock}>
                 {menu.map(m => {
                     if(m.pages.map(p => p.alias).includes(router.asPath.split('/')[2])){
-                        m.isOpened = true
+                        m.isOpened = true;
                     }
                     return (
                         <div key={m._id.secondCategory}>

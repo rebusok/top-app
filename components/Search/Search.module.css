@@ -4,7 +4,7 @@
 	width: 100%;
 }
 
-.input {
+.input input {
 	width: 100%;
 }
 
@@ -15,5 +15,5 @@
 
 	width: 30px;
 	height: 30px;
-	padding: 7px;
+	padding: 7px !important;
 }

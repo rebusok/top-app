@@ -28,7 +28,7 @@ const TopPageComponent = ({page, products, firstCategory}:TopPageComponentProps)
                 <Sort sort={sort} setSort={setSort}/>
             </div>
             <div>
-                {products && sortedProducts.map(p => (<Product product={p} key={p._id}/>))}
+                {products && sortedProducts.map(p => (<Product layout product={p} key={p._id}/>))}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag={'h2'}>Вакансии - {page.category}</Htag>

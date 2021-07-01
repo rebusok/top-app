@@ -10,8 +10,8 @@ import {API} from "../../helpers/api/Api";
 function Type({firstCategory}:TypeProps): JSX.Element {
 
     return (
-        < >
-            {firstCategory}
+        <>
+
         </>
     );
 }

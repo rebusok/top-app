@@ -13,6 +13,8 @@ import Product from "./Product/Product";
 import Divider from "./Divider/Divider";
 import Review from "./Review/Review";
 import ReviewForm from './ReviewForm/ReviewForm';
+import {Up} from './Up/Up';
+import { ButtonIcon } from "./ButtonIcon/ButtonIcon";
 export {
     Htag,
     Button,
@@ -28,5 +30,7 @@ export {
     Product,
     Divider,
     Review,
-    ReviewForm
+    ReviewForm,
+    Up,
+    ButtonIcon,
 };

@@ -1,15 +1,25 @@
-import React, {FC, useRef, useState} from 'react';
+import React, {ForwardedRef, forwardRef, useRef, useState} from 'react';
 import {ProductProps} from "./Product.props";
 import styles from './Product.module.css';
 import {Button, Card, Divider, Rating, Review, ReviewForm, Tag} from "../index";
 import {devOfNum, priceRu} from "../../helpers/helpers";
 import Image from "next/image";
 import cn from 'classnames';
+import {motion} from 'framer-motion';
 
-const Product: FC<ProductProps> = ({product, className, ...restProps}) => {
+const Product = motion(forwardRef(({
+                                       product,
+                                       className,
+                                       ...restProps
+                                   }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [isReviewOpen, setIsReviewOpen] = useState<boolean>(false);
 
     const reviewRef = useRef<HTMLDivElement>(null);
+
+    const variants = {
+        visible: {opacity: 1, height: 'auto'},
+        hidden: {opacity: 0, height: 0}
+    };
 
     const scrollToReview = () => {
         setIsReviewOpen(true);
@@ -19,7 +29,7 @@ const Product: FC<ProductProps> = ({product, className, ...restProps}) => {
         });
     };
     return (
-        <div className={className} {...restProps}>
+        <div className={className} {...restProps} ref={ref}>
             <Card className={styles.product}>
                 <div className={styles.logo}>
                     <Image
@@ -45,7 +55,9 @@ const Product: FC<ProductProps> = ({product, className, ...restProps}) => {
                 <div className={styles.priceTitle}>цена</div>
                 <div className={styles.creditTitle}>кредит</div>
                 <div
-                    className={styles.rateTitle}><a href={'#ref'} onClick={scrollToReview}>{product.reviewCount} {devOfNum(product.reviewCount, ['отзыв', "отзыва", "отзывов"])}</a></div>
+                    className={styles.rateTitle}><a href={'#ref'}
+                                                    onClick={scrollToReview}>{product.reviewCount} {devOfNum(product.reviewCount, ['отзыв', "отзыва", "отзывов"])}</a>
+                </div>
                 <Divider className={styles.hr}/>
                 <div className={styles.description}>{product.description}</div>
                 <div className={styles.feature}>
@@ -79,20 +91,19 @@ const Product: FC<ProductProps> = ({product, className, ...restProps}) => {
                     >Читать отзывы</Button>
                 </div>
             </Card>
-            <Card color={'blue'} className={cn(styles.review, {
-                [styles.open]: isReviewOpen,
-                [styles.close]: !isReviewOpen
-            })} ref={reviewRef}>
-                {product.reviews.map(r => (
-                    <div key={r._id}>
-                        <Review review={r}/>
-                        <Divider/>
-                    </div>
-                ))}
-                <ReviewForm productId={product._id}/>
-            </Card>
+            <motion.div variants={variants} initial={'hidden'} animate={isReviewOpen ? 'visible' : 'hidden'}>
+                <Card color={'blue'} className={styles.review} ref={reviewRef}>
+                    {product.reviews.map(r => (
+                        <div key={r._id}>
+                            <Review review={r}/>
+                            <Divider/>
+                        </div>
+                    ))}
+                    <ReviewForm productId={product._id}/>
+                </Card>
+            </motion.div>
         </div>
     );
-};
+}));
 
 export default Product;

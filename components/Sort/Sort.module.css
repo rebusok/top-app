@@ -20,10 +20,17 @@
 	gap: 40px;
 }
 
-.sort span {
+.sort button {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 
 	cursor: pointer;
+
+	border: none;
+	background-color: transparent;
+}
+
+.sortName {
+	display: none;
 }

@@ -37,7 +37,9 @@ const Search:FC<SearchProps> = ({className, ...restProps}) => {
             <Button
                 appearance={'primary'}
                 className={styles.button}
-                onClick={goToSearch}>
+                onClick={goToSearch}
+                aria-label={'Искать по сайту'}
+            >
                 <SearchIcon/>
             </Button>
         </div>

@@ -3,7 +3,6 @@ import {ProductProps} from "./Product.props";
 import styles from './Product.module.css';
 import {Button, Card, Divider, Rating, Review, ReviewForm, Tag} from "../index";
 import {devOfNum, priceRu} from "../../helpers/helpers";
-import Image from "next/image";
 import cn from 'classnames';
 import {motion} from 'framer-motion';
 
@@ -32,7 +31,7 @@ const Product = motion(forwardRef(({
         <div className={className} {...restProps} ref={ref}>
             <Card className={styles.product}>
                 <div className={styles.logo}>
-                    <Image
+                    <img
                         src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
                         alt={product.title}
                         width={70}

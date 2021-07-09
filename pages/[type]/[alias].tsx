@@ -8,6 +8,7 @@ import {firstLevelCategory} from "../../helpers/helpers";
 import {TopPageComponent} from "../../pageComponents";
 import {API} from "../../helpers/api/Api";
 import Head from 'next/head';
+import {ParsedUrlQuery} from "querystring";
 
 
 function TopPage({firstCategory, page, products}: TopPage): JSX.Element {
@@ -50,7 +51,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 
-export const getStaticProps: GetStaticProps<TopPage> = async ({params}: GetStaticPropsContext) => {
+export const getStaticProps: GetStaticProps<TopPage> = async ({params}: GetStaticPropsContext<ParsedUrlQuery>) => {
     if (!params) {
         return {
             notFound: true
